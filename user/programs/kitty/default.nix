@@ -1,5 +1,6 @@
 {
   config,
+  lib,
   pkgs,
   ...
 }: let
@@ -51,6 +52,8 @@ in {
       color14 = "#89b482";
       color7 = "#d4be98";
       color15 = "#d4be98";
+
+      shell = lib.getExe pkgs.fish;
     };
   };
 }

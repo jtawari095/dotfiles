@@ -2,6 +2,7 @@
   imports = [
     ./apps.nix
     ./fonts.nix
+    ./programs
   ];
 
   # Use Lix
