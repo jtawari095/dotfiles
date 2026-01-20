@@ -34,7 +34,9 @@
       name = "dotfiles";
       packages = with nixpkgs.legacyPackages.aarch64-darwin; [
         lua-language-server
+        stylua
         nil
+        alejandra
       ];
     };
   };
