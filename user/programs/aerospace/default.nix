@@ -59,6 +59,12 @@ in {
       alt-shift-4 = "move-node-to-workspace 4";
       alt-shift-5 = "move-node-to-workspace 5";
       alt-shift-6 = "move-node-to-workspace 6";
+
+      alt-comma = "workspace prev";
+      alt-period = "workspace next";
+
+      alt-n = "exec-and-forget osascript -e 'set volume output volume ((output volume of (get volume settings)) - 5)'";
+      alt-m = "exec-and-forget osascript -e 'set volume output volume ((output volume of (get volume settings)) + 5)'";
     };
   };
 }
