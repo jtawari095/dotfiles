@@ -5,6 +5,7 @@
 }: {
   imports = [
     ./aerospace
+    ./eza
     ./fish
     ./git
     ./neovim
