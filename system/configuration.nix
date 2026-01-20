@@ -20,6 +20,30 @@
   # Primary user
   system.primaryUser = "marika";
 
+  # System
+  system = {
+    defaults = {
+      dock = {
+        autohide = true;
+        show-recents = false;
+        mru-spaces = false;
+        expose-group-apps = true;
+      };
+      NSGlobalDomain = {
+        "com.apple.sound.beep.feedback" = 0;
+
+        # Interface
+        AppleInterfaceStyle = "Dark";
+
+        # Keyboard
+        AppleKeyboardUIMode = 3;
+        ApplePressAndHoldEnabled = true;
+        InitialKeyRepeat = 15;
+        KeyRepeat = 2;
+      };
+    };
+  };
+
   # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";
 }
