@@ -13,6 +13,7 @@ return {
     local servers = {
       lua_ls = {},
       nil_ls = {},
+      basedpyright = {},
     }
 
     -- Configure

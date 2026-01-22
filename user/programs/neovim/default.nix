@@ -12,6 +12,7 @@
     tree-sitter
     nil
     alejandra
+    basedpyright
   ];
 
   xdg.configFile."nvim" = {
