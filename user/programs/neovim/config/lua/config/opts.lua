@@ -5,3 +5,5 @@ vim.o.cursorline = true
 vim.o.undofile = true
 
 vim.o.signcolumn = 'yes'
+
+vim.o.smartindent = true
