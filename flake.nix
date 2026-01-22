@@ -7,6 +7,8 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    git-hooks.url = "github:cachix/git-hooks.nix";
+    git-hooks.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs @ {
@@ -14,7 +16,16 @@
     nix-darwin,
     nixpkgs,
     home-manager,
-  }: {
+    git-hooks,
+  }: let
+    pre-commit-check = git-hooks.lib.aarch64-darwin.run {
+      src = ./.;
+      hooks = {
+        alejandra.enable = true;
+        stylua.enable = true;
+      };
+    };
+  in {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#mini
     darwinConfigurations."mini" = nix-darwin.lib.darwinSystem {
@@ -32,12 +43,13 @@
     # Dev shells
     devShells.aarch64-darwin.default = nixpkgs.legacyPackages.aarch64-darwin.mkShell {
       name = "dotfiles";
-      packages = with nixpkgs.legacyPackages.aarch64-darwin; [
-        lua-language-server
-        stylua
-        nil
-        alejandra
-      ];
+      shellHook = pre-commit-check.shellHook;
+      packages = with nixpkgs.legacyPackages.aarch64-darwin;
+        [
+          lua-language-server
+          nil
+        ]
+        ++ pre-commit-check.enabledPackages;
     };
   };
 }
