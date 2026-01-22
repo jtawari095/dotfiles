@@ -10,6 +10,8 @@
   home.packages = with pkgs; [
     ripgrep
     tree-sitter
+    nil
+    alejandra
   ];
 
   xdg.configFile."nvim" = {
