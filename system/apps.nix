@@ -15,6 +15,7 @@
       "nikitabobko/tap/aerospace"
       "firefox"
       "kitty"
+      "telegram-desktop"
     ];
   };
 }
