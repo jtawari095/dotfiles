@@ -6,6 +6,7 @@ return {
         lua = { 'stylua' },
         nix = { 'alejandra' },
         python = { 'ruff_format' },
+        css = { 'prettier' },
       },
     })
 
