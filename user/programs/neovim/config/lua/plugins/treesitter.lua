@@ -17,7 +17,11 @@ return {
         local language = vim.treesitter.language.get_lang(args.match)
 
         if language and vim.tbl_contains(parsers, language) then
+          -- Enable highlighting
           vim.treesitter.start(buf, language)
+
+          -- Enable indentation
+          vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
         end
       end,
     })
