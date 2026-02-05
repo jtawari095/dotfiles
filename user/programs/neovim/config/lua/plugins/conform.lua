@@ -7,6 +7,7 @@ return {
         nix = { 'alejandra' },
         python = { 'ruff_format' },
         css = { 'prettier' },
+        rust = { 'rustfmt' },
       },
     })
 

@@ -13,6 +13,7 @@ return {
     local servers = {
       lua_ls = {},
       nil_ls = {},
+      rust_analyzer = {},
       basedpyright = {},
     }
 
